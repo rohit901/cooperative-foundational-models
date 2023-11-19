@@ -8,4 +8,4 @@ Official code for our paper "Enhancing Novel Object Detection via Cooperative Fo
 
 <hr>
 
-![method-diagram](https://github.com/rohit901/cooperative-foundational-models/blob/main/figures/architecture.png)
+![method-diagram](https://rohit901.github.io/media/cooperative_foundational_models/architecture.png)
