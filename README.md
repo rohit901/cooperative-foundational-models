@@ -2,7 +2,7 @@
 
 [Rohit K Bharadwaj](https://rohit901.github.io), [Muzammal Naseer](https://muzammal-naseer.com/), [Salman Khan](https://salman-h-khan.github.io/), [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)]()
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2311.12068)
 
 Official code for our paper "Enhancing Novel Object Detection via Cooperative Foundational Models"
 
