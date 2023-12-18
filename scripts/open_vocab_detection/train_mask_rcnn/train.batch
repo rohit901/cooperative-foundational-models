@@ -1,0 +1,19 @@
+export DETECTRON2_DATASETS=path/to/datasets
+
+CONFIG_FILE=cfg/OpenVocab/R101-FPN-New-Baseline.py
+
+OUTPUT_DIR=outputs/coco_ovd
+
+CHECKPOINT_PATH="path/to/moco_v2_800ep_pretrain.pkl"
+
+python scripts/open_vocab_detection/train_mask_rcnn/train_mask_rcnn.py \
+    --config-file $CONFIG_FILE \
+    --num-gpus 2 \
+    --dist-url 'tcp://localhost:10042' \
+    train.init_checkpoint=$CHECKPOINT_PATH \
+    train.output_dir=$OUTPUT_DIR \
+    dataloader.train.total_batch_size=32 \
+    train.exp_name="train-mask-rcnn-on-coco-ovd" \
+    train.max_iter=180000 \
+    train.eval_period=10000 \
+    train.checkpointer.period=2500
