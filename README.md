@@ -10,7 +10,7 @@ Official code for our paper "Enhancing Novel Object Detection via Cooperative Fo
 
 ## :rocket: News
 * **(Dec 19, 2023)**
-  * Code for our method on novel object detection, and open-vocabulary detection setting released.
+  * Code for our method on novel object detection, and open-vocabulary detection setting are released.
 
 <hr>
 
