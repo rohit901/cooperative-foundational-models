@@ -54,8 +54,6 @@ def inference_gdino(model, inputs, text_prompt_list, param_dict):
     sam = param_dict["sam"]
     resize_transform = param_dict["resize_transform"]
 
-    maskrcnn_version = param_dict["maskrcnn_version"]
-
     rcnn_model.eval()
 
     if not isinstance(rcnn_model.roi_heads.box_predictor, nn.ModuleList):  # baseline, non-centernet
@@ -108,8 +106,7 @@ def inference_gdino(model, inputs, text_prompt_list, param_dict):
         cropped_img_arr = cropped_image.permute(1, 2, 0).numpy()
 
         if cropped_img_arr.shape[0] > 0 and cropped_img_arr.shape[1] > 0:
-            if maskrcnn_version == "V2":
-                cropped_img_arr = cv2.cvtColor(cropped_img_arr, cv2.COLOR_BGR2RGB)
+            cropped_img_arr = cv2.cvtColor(cropped_img_arr, cv2.COLOR_BGR2RGB)
             img_pil = Image.fromarray(cropped_img_arr)
             image = preprocess(img_pil).unsqueeze(0).to(device)
 

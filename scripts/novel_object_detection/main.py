@@ -22,7 +22,6 @@ cfg_file = params["cfg_file"]
 rcnn_weight_dir = params["rcnn_weight_dir"]
 sam_checkpoint = params["sam_checkpoint"]
 gdino_checkpoint = params["gdino_checkpoint"]
-maskrcnn_version = params["maskrcnn_version"]
 
 os.environ['DETECTRON2_DATASETS'] = detectron2_dir
 
@@ -67,30 +66,17 @@ known_class_ids=[3, 12, 34, 35, 36, 41, 45, 58, 60, 76, 77, 80, 90, 94, 99, 118,
                          964, 976, 982, 1000, 1019, 1037, 1071, 1077, 1079, 1095, 1097, 1102, 1112, 1115, 1123, 1133,
                          1139, 1190, 1202]
 
-if maskrcnn_version == "V1":
-    test_loader = build_detection_test_loader(
-        dataset = get_detection_dataset_dicts(names = lvis_data_split, filter_empty=False),
-        mapper= DatasetMapper(
-            is_train = False,
-            augmentations=[
-                T.ResizeShortestEdge(short_edge_length=800, max_size=1333),
-            ],
-            image_format="RGB", # has to be 'BGR' for MaskRCNN-V2, 'RGB' for MaskRCNN-V1
-        ),
-        num_workers=4,
-    )
-elif maskrcnn_version == "V2":
-    test_loader = build_detection_test_loader(
-        dataset = get_detection_dataset_dicts(names = lvis_data_split, filter_empty=False),
-        mapper= DatasetMapper(
-            is_train = False,
-            augmentations=[
-                T.ResizeShortestEdge(short_edge_length=800, max_size=1333),
-            ],
-            image_format="BGR", # has to be 'BGR' for MaskRCNN-V2, 'RGB' for MaskRCNN-V1
-        ),
-        num_workers=4,
-    )
+test_loader = build_detection_test_loader(
+    dataset = get_detection_dataset_dicts(names = lvis_data_split, filter_empty=False),
+    mapper= DatasetMapper(
+        is_train = False,
+        augmentations=[
+            T.ResizeShortestEdge(short_edge_length=800, max_size=1333),
+        ],
+        image_format="BGR", # has to be 'BGR' for MaskRCNN-V2, 'RGB' for MaskRCNN-V1
+    ),
+    num_workers=4,
+)
 
 tokenizer = model.tokenizer
 
@@ -122,7 +108,6 @@ param_dict["coco_to_lvis"] = coco_to_lvis
 
 param_dict["sam"] = sam
 param_dict["resize_transform"] = resize_transform
-param_dict["maskrcnn_version"] = maskrcnn_version
 
 if __name__ == "__main__":
     results = inference(test_loader, discovery_evaluator, model, text_prompt_list, param_dict)
