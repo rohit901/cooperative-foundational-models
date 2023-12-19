@@ -19,6 +19,13 @@ Official code for our paper "Enhancing Novel Object Detection via Cooperative Fo
 > **Abstract:** *In this work, we address the challenging and emergent problem of novel object detection (NOD), focusing on the accurate detection of both known and novel object categories during inference. Traditional object detection algorithms are inherently closed-set, limiting their capability to handle NOD. We present a novel approach to transform existing closed-set detectors into open-set detectors. This transformation is achieved by leveraging the complementary strengths of pre-trained foundational models, specifically CLIP and SAM, through our cooperative mechanism. Furthermore, by integrating this mechanism with state-of-the-art open-set detectors such as GDINO, we establish new benchmarks in object detection performance. Our method achieves 17.42 mAP in novel object detection and 42.08 mAP for known objects on the challenging LVIS dataset. Adapting our approach to the COCO OVD split, we surpass the current state-of-the-art by a margin of 7.2 AP<sub>50</sub> for novel classes.*
 >
 
+## :trophy: Achievements and Features
+
+- We establish **state-of-the-art results (SOTA)** in novel object detection on LVIS, and open-vocabulary detection benchmark on COCO.
+- We propose a simple, modular, and training-free approach which can detect (i.e. localize and classify) known as well as novel objects in the given input image.
+- Our approach easily transforms any existing closed-set detectors into open-set detectors by leveraging the complimentary strengths of foundational models like CLIP and SAM.
+- The modular nature of our approach allows us to easily swap out any specific component, and further combine it with existing SOTA open-set detectors to achieve additional performance improvements.
+
 ## Code
 The full code will be made available soon. Please check back later.
 
