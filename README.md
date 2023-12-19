@@ -1,5 +1,7 @@
 # Enhancing Novel Object Detection via Cooperative Foundational Models
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/enhancing-novel-object-detection-via/open-vocabulary-object-detection-on-mscoco)](https://paperswithcode.com/sota/open-vocabulary-object-detection-on-mscoco?p=enhancing-novel-object-detection-via) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/enhancing-novel-object-detection-via/novel-object-detection-on-lvis-v1-0-val)](https://paperswithcode.com/sota/novel-object-detection-on-lvis-v1-0-val?p=enhancing-novel-object-detection-via)
+
 [Rohit K Bharadwaj](https://rohit901.github.io), [Muzammal Naseer](https://muzammal-naseer.com/), [Salman Khan](https://salman-h-khan.github.io/), [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2311.12068)
