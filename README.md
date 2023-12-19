@@ -103,9 +103,69 @@ To download and setup the required datasets used in this work, please follow the
 **Table 1:** Comparison of object detection performance using mAP on the *lvis_val* dataset.
 
 To replicate our results from the above table (i.e. Table 1 from the main paper):
-1. **Modify `scripts/novel_object_detection/params.json` file:**
+1. Modify `scripts/novel_object_detection/params.json` file:
    - Edit the key `detectron2_dir` and set it following instructions in [Datasets](#datasets)
+   - Edit the key `sam_checkpoint` and set the path to the downloaded file `SAM_weights.pth`
+   - Edit the key `gdino_checkpoint` and set the path to the downloaded file `GDINO_weights.pth`
+   - Edit the key `rcnn_weight_dir` and set the path to the downloaded folder `maskrcnn_v2` [**NOTE:** DO NOT put a trailing slash]
+  
+2. Run the following script from the main project directory as follows:
+   ```bash
+   python scripts/novel_object_detection/main.py
+   ```
+The above script periodically saves the predictions output in the `outputs` directory which is automatically created in the project level folder (i.e. `cooperative-foundational-models/outputs`). After executing the above script, the results will be printed to the console. Further, the final combined predictions of all the 19809 images in LVIS val dataset is saved as `instances_predictions.pth`, and can be used with `scripts/novel_object_detection/evaluate_results_from_predictions.py` to compute the final results.
 
+**NOTE:** We were able to get slightly better overall result with our method using the code in this repository compared to the reported results in the paper:
+| Method | Known AP | Novel AP | ALL AP |
+|--------|----------|----------|--------|
+| Ours (Paper)    | 42.08    | 17.42    | 19.33  |
+| Ours (GitHub)   | 45.43    | 17.25    | 19.43  |
+
+
+## :medal_military: Open Vocabulary Detection on COCO OVD Dataset
+
+| Method                     | Backbone                | Use Extra Training Set | Novel AP<sub>50</sub> |
+|-----------------------------|-------------------------|------------------------|---------------------------|
+| OVR-CNN                 | RN50                    | ✔                      | 22.8                      |
+| ViLD                    | ViT-B/32                | ✘                      | 27.6                      |
+| Detic                   | RN50                    | ✔                      | 27.8                      |
+| OV-DETR                 | ViT-B/32                | ✘                      | 29.4                      |
+| BARON                   | RN50                    | ✘                      | 34                        |
+| Rasheed et al          | RN50                    | ✔                      | 36.6                      |
+| CORA                    | RN50x4                  | ✘                      | 41.7                      |
+| BARON                   | RN50                    | ✔                      | 42.7                      |
+| CORA+                   | RN50x4                  | ✔                      | 43.1                      |
+| **Ours***                  | **RN101 + SwinT**       | ✘                      | **50.3**                   |
+
+**Table 2:**  Results on COCO OVD benchmark.
+*Our approach with GDINO, SigLIP, and Mask-RCNN trained on COCO OVD split.
+
+To replicate our results from the above table (i.e. Table 2 from the main paper):
+1. Obtain the trained Mask-RCNN model weights on COCO OVD dataset split.
+   - Train the Mask-RCNN model from scratch:
+      - Edit the values of `DETECTRON2_DATASETS`, `CHECKPOINT_PATH` in `scripts/open_vocab_detection/train_mask_rcnn/train.batch`
+      - Start training by running: `bash scripts/open_vocab_detection/train_mask_rcnn/train.batch`
+   - Alternatively, download the pre-trained weights of Mask-RCNN trained on COCO OVD from [Model Weights](#model-weights), and edit `detectron2_dir`, `sam_checkpoint`, `gdino_checkpoint`, and `rcnn_weight_dir` values in `scripts/open_vocab_detection/evaluate_method/params.json` accordingly. For `rcnn_weight_dir` set the path to the downloaded folder `MaskRCNN_COCO_OVD` **without trailing slash**.
+  
+2. Run the following script from main project directory as follows:
+   ```bash
+   python scripts/open_vocab_detection/evaluate_method/main.py
+   ```
+
+After executing the above script, the results will be displayed on the console. Ensure you follow the proper installation and setup steps mentioned in [Datasets](#datasets), and [Model Weights](#model-weights).
 
 ## Contact
 Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@mbzuai.ac.ae
+
+## :black_nib: Citation
+If you found our work helpful, consider starring the repository ⭐⭐⭐ and citing our work as follows:
+```bibtex
+@misc{bharadwaj2023enhancing,
+      title={Enhancing Novel Object Detection via Cooperative Foundational Models}, 
+      author={Rohit Bharadwaj and Muzammal Naseer and Salman Khan and Fahad Shahbaz Khan},
+      year={2023},
+      eprint={2311.12068},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
