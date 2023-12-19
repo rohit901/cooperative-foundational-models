@@ -154,7 +154,7 @@ To replicate our results from the above table (i.e. Table 2 from the main paper)
 
 After executing the above script, the results will be displayed on the console. Ensure you follow the proper installation and setup steps mentioned in [Datasets](#datasets), and [Model Weights](#model-weights).
 
-## Contact
+## :email: Contact
 Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@mbzuai.ac.ae
 
 ## :black_nib: Citation
