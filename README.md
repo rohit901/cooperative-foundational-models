@@ -158,7 +158,7 @@ After executing the above script, the results will be displayed on the console. 
 Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@mbzuai.ac.ae
 
 ## :black_nib: Citation
-If you found our work helpful, consider starring the repository ⭐⭐⭐ and citing our work as follows:
+If you found our work helpful, please consider starring the repository ⭐⭐⭐ and citing our work as follows:
 ```bibtex
 @misc{bharadwaj2023enhancing,
       title={Enhancing Novel Object Detection via Cooperative Foundational Models}, 
