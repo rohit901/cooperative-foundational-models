@@ -157,6 +157,9 @@ After executing the above script, the results will be displayed on the console. 
 ## :email: Contact
 Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@mbzuai.ac.ae
 
+## :pray: Acknowledgement
+We thank the authors of [GDINO](https://github.com/IDEA-Research/GroundingDINO/tree/main), [SAM](https://github.com/facebookresearch/segment-anything), [CLIP](https://github.com/openai/CLIP), and [RNCDL](https://github.com/vlfom/RNCDL/tree/main) for releasing their code. 
+
 ## :black_nib: Citation
 If you found our work helpful, please consider starring the repository ⭐⭐⭐ and citing our work as follows:
 ```bibtex
