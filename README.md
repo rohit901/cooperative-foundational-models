@@ -157,7 +157,7 @@ To replicate our results from the above table (i.e. Table 2 from the main paper)
 After executing the above script, the results will be displayed on the console. Ensure you follow the proper installation and setup steps mentioned in [Datasets](#datasets), and [Model Weights](#model-weights).
 
 ## :framed_picture: Qualitative Visualization
-| RNCDL                                         | GDINO                                         | MaskRCNN_CLIP                                | Ours                                         |
+| RNCDL                                         | GDINO                                         | RCNN_CLIP                                | Ours                                         |
 |-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|----------------------------------------------|
 | <img src="visualizations/img_1_RNCDL.jpg" width="200"/> | <img src="visualizations/img_1_GDINO.jpg" width="200"/> | <img src="visualizations/img_1_MaskRCNN_CLIP.jpg" width="200"/> | <img src="visualizations/img_1_Ours.jpg" width="200"/> |
 | <img src="visualizations/img_2_RNCDL.jpg" width="200"/> | <img src="visualizations/img_2_GDINO.jpg" width="200"/> | <img src="visualizations/img_2_MaskRCNN_CLIP.jpg" width="200"/> | <img src="visualizations/img_2_Ours.jpg" width="200"/> |
