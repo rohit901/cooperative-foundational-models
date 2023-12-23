@@ -9,6 +9,8 @@
 Official code for our paper "Enhancing Novel Object Detection via Cooperative Foundational Models"
 
 ## :rocket: News
+* **(Dec 24, 2023)**
+  * Project website with additional comparative qualitative visualizations is now live at [https://rohit901.github.io/coop-foundation-models/](https://rohit901.github.io/coop-foundation-models/)
 * **(Dec 19, 2023)**
   * Code for our method on novel object detection, and open-vocabulary detection setting has been released.
 
@@ -153,6 +155,8 @@ To replicate our results from the above table (i.e. Table 2 from the main paper)
    ```
 
 After executing the above script, the results will be displayed on the console. Ensure you follow the proper installation and setup steps mentioned in [Datasets](#datasets), and [Model Weights](#model-weights).
+
+## 
 
 ## :email: Contact
 Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@mbzuai.ac.ae
