@@ -163,7 +163,7 @@ After executing the above script, the results will be displayed on the console. 
 | <img src="visualizations/img_2_RNCDL.jpg" width="200"/> | <img src="visualizations/img_2_GDINO.jpg" width="200"/> | <img src="visualizations/img_2_MaskRCNN_CLIP.jpg" width="200"/> | <img src="visualizations/img_2_Ours.jpg" width="200"/> |
 | <img src="visualizations/img_3_RNCDL.jpg" width="200"/> | <img src="visualizations/img_3_GDINO.jpg" width="200"/> | <img src="visualizations/img_3_MaskRCNN_CLIP.jpg" width="200"/> | <img src="visualizations/img_3_Ours.jpg" width="200"/> |
 
-To see additional and higher resolution visualizations, please visit the [project website](https://rohit901.github.io/coop-foundation-models/){:target="_blank"}
+To see additional and higher resolution visualizations, please visit the [project website](https://rohit901.github.io/coop-foundation-models/)
 
 
 ## :email: Contact
