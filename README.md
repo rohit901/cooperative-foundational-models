@@ -9,6 +9,8 @@
 Official code for our paper "Enhancing Novel Object Detection via Cooperative Foundational Models"
 
 ## :rocket: News
+* **(Feb 19, 2024)**
+  * Added inference code to detect LVIS class vocab (1203 classes) on custom images.
 * **(Dec 24, 2023)**
   * Project website with additional qualitative visualizations is now live at [https://rohit901.github.io/coop-foundation-models/](https://rohit901.github.io/coop-foundation-models/)
 * **(Dec 19, 2023)**
@@ -123,6 +125,12 @@ The above script periodically saves the predictions output in the `outputs` dire
 | Ours (Paper)    | 42.08    | 17.42    | 19.33  |
 | Ours (GitHub)   | 45.43    | 17.25    | 19.43  |
 
+### Inference on Custom Images
+To detect LVIS class vocab (1203 classes) on your custom images:
+1. Please follow the previous instructions to properly setup the data, `params.json`, and the environment.
+2. Run `python scripts/novel_object_detection/inference_single_image.py --image_path custom_image.jpg`, you can replace custom_image.jpg with your own image and change the path accordingly.
+
+The above script by default generates bounding box visualization of top-5 high scoring boxes. You may change the top-k visualization parameter by modifying the script. Alternatively, you may also choose to visualize the outputs based on confidence score threshold.
 
 ## :medal_military: Open Vocabulary Detection on COCO OVD Dataset
 
