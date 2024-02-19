@@ -7,6 +7,8 @@ import json
 import numpy as np
 import os
 import itertools
+import detectron2.data.transforms as T
+
 from tqdm import tqdm
 
 from detectron2.utils.logger import log_every_n_seconds, create_small_table
@@ -17,6 +19,34 @@ from lvis import LVISEval
 from collections import OrderedDict
 
 from ground_dino_utils import inference_gdino
+from utils import read_image
+
+@torch.no_grad()
+def inference_single_image(model, image_path, text_prompt_list, param_dict, image_format = "BGR"):
+    data_dict = {}
+    inputs = []
+
+    img = read_image(image_path, format = image_format)
+    orig_height = img.shape[0]
+    orig_width = img.shape[1]
+    data_dict["file_name"] = os.path.abspath(image_path)
+    data_dict["height"] = orig_height
+    data_dict["width"] = orig_width
+    data_dict["not_exhaustive_category_ids"] = []
+    data_dict["neg_category_ids"] = []
+    data_dict["image_id"] = 0
+
+    augmentations = T.AugmentationList([T.ResizeShortestEdge(short_edge_length = 800, max_size = 1333)])
+
+    aug_input = T.AugInput(img, sem_seg=None)
+    transforms = augmentations(aug_input)
+
+    image = aug_input.image
+    data_dict["image"] = torch.as_tensor(np.ascontiguousarray(image.transpose(2, 0, 1)))
+
+    inputs.append(data_dict)
+
+    _ = inference_gdino(model, inputs, text_prompt_list, param_dict)
 
 @torch.no_grad()
 def inference(data_loader, evaluator_discovery, model, text_prompt_list, param_dict):
