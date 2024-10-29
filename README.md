@@ -9,6 +9,8 @@
 Official code for our paper "Enhancing Novel Object Detection via Cooperative Foundational Models"
 
 ## :rocket: News
+* **(Oct 29, 2024)**
+  * This paper has been accepted for publication in the [WACV 2025](https://wacv2025.thecvf.com/) conference.
 * **(Feb 19, 2024)**
   * Added inference code to detect LVIS class vocab (1203 classes) on custom images.
 * **(Dec 24, 2023)**
