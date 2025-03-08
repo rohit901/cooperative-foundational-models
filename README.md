@@ -10,7 +10,7 @@ Official code for our paper "Enhancing Novel Object Detection via Cooperative Fo
 
 ## :rocket: News
 * **(Oct 29, 2024)**
-  * This paper has been accepted for publication in the [WACV 2025](https://wacv2025.thecvf.com/) conference.
+  * This paper has been accepted for publication in the [WACV 2025](https://openaccess.thecvf.com/content/WACV2025/papers/Bharadwaj_Enhancing_Novel_Object_Detection_via_Cooperative_Foundational_Models_WACV_2025_paper.pdf) conference.
 * **(Feb 19, 2024)**
   * Added inference code to detect LVIS class vocab (1203 classes) on custom images.
 * **(Dec 24, 2023)**
@@ -185,12 +185,12 @@ We thank the authors of [GDINO](https://github.com/IDEA-Research/GroundingDINO/t
 ## :black_nib: Citation
 If you found our work helpful, please consider starring the repository ⭐⭐⭐ and citing our work as follows:
 ```bibtex
-@misc{bharadwaj2023enhancing,
-      title={Enhancing Novel Object Detection via Cooperative Foundational Models}, 
-      author={Rohit Bharadwaj and Muzammal Naseer and Salman Khan and Fahad Shahbaz Khan},
-      year={2023},
-      eprint={2311.12068},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Bharadwaj_2025_WACV,
+    author    = {Bharadwaj, Rohit and Naseer, Muzammal and Khan, Salman and Khan, Fahad Shahbaz},
+    title     = {Enhancing Novel Object Detection via Cooperative Foundational Models},
+    booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {February},
+    year      = {2025},
+    pages     = {9025-9034}
 }
 ```
