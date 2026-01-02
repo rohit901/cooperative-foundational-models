@@ -7,6 +7,8 @@
 Official code for our paper "Enhancing Novel Object Detection via Cooperative Foundational Models"
 
 ## :rocket: News
+* **(Jan 2, 2026)**
+  * Fixed the broken links for model weights in the README.
 * **(Oct 29, 2024)**
   * This paper has been accepted for publication in the [WACV 2025](https://openaccess.thecvf.com/content/WACV2025/papers/Bharadwaj_Enhancing_Novel_Object_Detection_via_Cooperative_Foundational_Models_WACV_2025_paper.pdf) conference.
 * **(Feb 19, 2024)**
@@ -62,8 +64,8 @@ python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wh
 To download and setup the required datasets used in this work, please follow these steps:
 1. Download the COCO2017 dataset from their official website: [https://cocodataset.org/#download](https://cocodataset.org/#download). Specfically, download `2017 Train images`, `2017 Val images`, `2017 Test images`, and their annotation files `2017 Train/Val annotations`.
 2. Download the LVIS v1.0 annotations from: [https://www.lvisdataset.org/dataset](https://www.lvisdataset.org/dataset). There is no need to download images from this website as LVIS uses the same COCO2017 images. Specifically download the annotation files corresponding to the training set (1GB), and validation set (192 MB).
-3. Download extra/custom annotation files for COCO open-vocabulary splits from: [COCO-OVD-Annotations](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/rohit_bharadwaj_mbzuai_ac_ae/EgiIumWrcqhGpanKRaYfGYsBOga7V4fgDHcz_W_ys8UVLg?e=Qq0gfT), specifically download both `ovd_instances_train2017_base.json`, and `ovd_instances_val2017_basetarget.json`.
-4. Download extra/custom annotation file for `lvis_val_subset` dataset from: [LVIS-Val-Subset](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/rohit_bharadwaj_mbzuai_ac_ae/ErCHDEIltBNBpnedS2S0TUsBFHs1SmVTM525z6ukoiMFLw?e=QPBEL0), specifically download `lvis_v1_val_subset.json`.
+3. Download extra/custom annotation files for COCO open-vocabulary splits from: [link](https://datasync.ed.ac.uk/index.php/s/XFIjVwgt3JS0uxR) (password: `cfm123`), specifically download both `ovd_instances_train2017_base.json`, and `ovd_instances_val2017_basetarget.json` from the relative path: `datasets/coco/annotations` in the given link.
+4. Download extra/custom annotation file for `lvis_val_subset` dataset from: [link](https://datasync.ed.ac.uk/index.php/s/XFIjVwgt3JS0uxR) (password: `cfm123`), specifically download `lvis_v1_val_subset.json` from the relative path: `datasets/lvis` in the given link.
 5. Detectron2 requires you to setup the datasets in a specific folder format/structure, for that it uses the environment variable `DETECTRON2_DATASETS` which is set equal to the path of the location containing all the different datasets. The file structure of `DETECTRON2_DATASETS` should be as follows:
 - `coco/`
   - `annotations/`
@@ -80,10 +82,10 @@ To download and setup the required datasets used in this work, please follow the
   - `lvis_v1_train.json`
   - `lvis_v1_val_subset.json`
 
- The above file structure can also be seen from this onedrive link: [link](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/rohit_bharadwaj_mbzuai_ac_ae/Ej02TuxaTthBrD-yKSOd0SYByEwb5Hqq17Kv4V21AOohkQ?e=H7G9I5). Thus, the value for `DETECTRON2_DATASETS` or `detectron2_dir` in our code file should be the absolute path to the `datasets` directory which follows the above structure.
+ The above file structure can also be seen from this link: [link](https://datasync.ed.ac.uk/index.php/s/XFIjVwgt3JS0uxR) (password: `cfm123`). Thus, the value for `DETECTRON2_DATASETS` or `detectron2_dir` in our code file should be the absolute path to the `datasets` directory which follows the above structure.
 
  ### Model Weights
- All the pre-trained model weights can be downloaded from this link: [model weights](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/rohit_bharadwaj_mbzuai_ac_ae/EpiLUqdhaSxKjB_BjVXCrmAB4cEGNbg3ilGppX5FTQ9sFA?e=EyZs0k). The folder contains the following model weights:
+ All the pre-trained model weights can be downloaded from this link: [model weights](https://datasync.ed.ac.uk/index.php/s/XFIjVwgt3JS0uxR) (password: `cfm123`). The folder contains the following model weights:
 
  - **GDINO_weights.pth**: Grounding DINO model weights used in both Novel Object Detection, and Open Vocabulary Detection tasks. Edit the key corresponding to `gdino_checkpoint` in `params.json` file to point to this file.
  - **SAM_weights.pth** Segment Anything Model (SAM) weights used in both Novel Object Detection, and Open Vocabulary Detection tasks. Edit the key corresponding to `sam_checkpoint` in `params.json` file to point to this file.
@@ -175,7 +177,7 @@ To see additional and higher resolution visualizations, please visit the [projec
 
 
 ## :email: Contact
-Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@mbzuai.ac.ae
+Should you have any questions, please create an issue in this repository or contact at rohit.bharadwaj@ed.ac.uk
 
 ## :pray: Acknowledgement
 We thank the authors of [GDINO](https://github.com/IDEA-Research/GroundingDINO/tree/main), [SAM](https://github.com/facebookresearch/segment-anything), [CLIP](https://github.com/openai/CLIP), and [RNCDL](https://github.com/vlfom/RNCDL/tree/main) for releasing their code. 
